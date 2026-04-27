@@ -1,0 +1,146 @@
+/* ========== SCROLL REVEAL ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger children */
+.stagger-children .reveal:nth-child(1) { transition-delay: 0.05s; }
+.stagger-children .reveal:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children .reveal:nth-child(3) { transition-delay: 0.15s; }
+.stagger-children .reveal:nth-child(4) { transition-delay: 0.2s; }
+.stagger-children .reveal:nth-child(5) { transition-delay: 0.25s; }
+.stagger-children .reveal:nth-child(6) { transition-delay: 0.3s; }
+
+/* ========== TEXT ANIMATIONS ========== */
+.split-text .char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* ========== FLOAT ANIMATION ========== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+/* ========== GLOW PULSE ========== */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(var(--accent-primary-rgb), 0.2); }
+  50% { box-shadow: 0 0 40px rgba(var(--accent-primary-rgb), 0.4), 0 0 80px rgba(var(--accent-primary-rgb), 0.1); }
+}
+.glow-pulse { animation: glowPulse 3s ease-in-out infinite; }
+
+/* ========== SHIMMER ========== */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--text-primary) 0%,
+    var(--accent-primary) 50%,
+    var(--text-primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ========== GRADIENT BORDER SPIN ========== */
+@keyframes borderSpin {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+/* ========== PARALLAX LAYERS ========== */
+.parallax-slow { will-change: transform; }
+.parallax-medium { will-change: transform; }
+.parallax-fast { will-change: transform; }
+
+/* ========== MAGNETIC BUTTON ========== */
+.magnetic-btn {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+/* ========== SECTION DIVIDERS ========== */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--accent-primary-rgb), 0.2) 50%,
+    transparent
+  );
+  margin: 0;
+}
+
+/* ========== MARQUEE TICKER ========== */
+.marquee-section {
+  width: 100%;
+  background-color: var(--accent-secondary);
+  color: #F5F0EB;
+  padding: 24px 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  white-space: nowrap;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.marquee-content {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+.marquee-content span {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 30px;
+  letter-spacing: 2px;
+  color: #F5F0EB;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
