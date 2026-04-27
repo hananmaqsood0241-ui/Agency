@@ -1,0 +1,28 @@
+{
+  "name": "zeptivo-agency",
+  "version": "1.0.0",
+  "description": "ZEPTIVO Digital - Premium Digital Marketing Agency Website",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hananmaqsood0241-ui/Agency.git"
+  },
+  "keywords": [
+    "digital-marketing",
+    "agency",
+    "email-marketing",
+    "web-design"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hananmaqsood0241-ui/Agency/issues"
+  },
+  "homepage": "https://github.com/hananmaqsood0241-ui/Agency#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
