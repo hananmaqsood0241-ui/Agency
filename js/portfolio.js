@@ -60,15 +60,23 @@ const Portfolio = (() => {
 
         cards.forEach(card => {
           const cat = card.dataset.category;
-          const show = filter === 'all' || cat === filter;
-          card.style.display = show ? '' : 'none';
-          if (show) {
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.9)';
-            requestAnimationFrame(() => {
-              card.style.transition = 'opacity 0.4s, transform 0.4s';
-              card.style.opacity = '1';
-              card.style.transform = 'scale(1)';
+          const isMatch = filter === 'all' || cat === filter;
+
+          if (isMatch) {
+            card.style.display = 'block';
+            gsap.fromTo(card, 
+              { opacity: 0, scale: 0.8 }, 
+              { opacity: 1, scale: 1, duration: 0.5, ease: 'power2.out', clearProps: 'all' }
+            );
+          } else {
+            gsap.to(card, {
+              opacity: 0,
+              scale: 0.8,
+              duration: 0.4,
+              ease: 'power2.in',
+              onComplete: () => {
+                card.style.display = 'none';
+              }
             });
           }
         });

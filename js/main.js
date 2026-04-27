@@ -12,22 +12,31 @@
   // Initialize everything after page load
   window.addEventListener('load', () => {
     // Dismiss preloader with counter
+    // Dismiss preloader with counter
     const preloaderCounter = document.getElementById('preloaderCounter');
-    let progress = 0;
-    const interval = setInterval(() => {
-      progress += Math.floor(Math.random() * 15) + 5;
-      if (progress > 100) progress = 100;
-      if (preloaderCounter) preloaderCounter.innerText = progress + '%';
+    const preloaderBar = document.querySelector('.preloader-bar-inner');
+    let start = null;
+    const duration = 2500; // 2.5 seconds
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const percent = Math.floor(progress * 100);
       
-      if (progress === 100) {
-        clearInterval(interval);
+      if (preloaderCounter) preloaderCounter.innerText = percent + '%';
+      if (preloaderBar) preloaderBar.style.width = percent + '%';
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
         setTimeout(() => {
           const preloader = document.getElementById('preloader');
           if (preloader) preloader.classList.add('loaded');
           document.body.classList.remove('is-loading');
         }, 500);
       }
-    }, 100);
+    }
+    window.requestAnimationFrame(step);
 
     // Init modules
     try { ThreeScene.init(); } catch (e) { console.warn('Three.js:', e); }

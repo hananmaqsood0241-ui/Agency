@@ -11,7 +11,7 @@ const Testimonials = (() => {
   const cards = track.querySelectorAll('.testimonial-card');
   let current = 0;
   let interval;
-  const INTERVAL_MS = 5000;
+  const INTERVAL_MS = 4000;
 
   function init() {
     if (cards.length === 0) return;

@@ -26,18 +26,23 @@ const Contact = (() => {
       }
 
       // Success animation
-      const btn = form.querySelector('.form-submit');
-      const originalText = btn.textContent;
-      btn.textContent = '✓ Message Sent!';
-      btn.style.background = 'linear-gradient(135deg, #00C853, #00E676)';
+      const btn = form.querySelector('#submitBtn');
+      const successMsg = document.getElementById('formSuccess');
+      
+      btn.classList.add('loading');
       btn.disabled = true;
 
+      // Simulate a network request
       setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
+        btn.classList.remove('loading');
+        successMsg.classList.add('show');
         form.reset();
-      }, 3000);
+
+        setTimeout(() => {
+          successMsg.classList.remove('show');
+          btn.disabled = false;
+        }, 5000);
+      }, 2000);
     });
 
     // Focus glow on inputs

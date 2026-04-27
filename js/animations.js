@@ -75,6 +75,9 @@ const Animations = (() => {
         start: 'top 90%',
         once: true,
         onEnter: () => {
+          const suffix = counter.nextElementSibling && counter.nextElementSibling.classList.contains('suffix') 
+                        ? counter.nextElementSibling.innerText 
+                        : '';
           gsap.to(counter, {
             innerText: target,
             duration: 2,
@@ -82,6 +85,9 @@ const Animations = (() => {
             snap: { innerText: 1 },
             onUpdate() {
               counter.textContent = Math.round(parseFloat(counter.textContent));
+            },
+            onComplete() {
+              counter.textContent = target; // Ensure exact final value
             }
           });
         }

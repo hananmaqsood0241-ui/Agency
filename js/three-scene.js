@@ -67,6 +67,31 @@ const ThreeScene = (() => {
     blob2.position.set(-250, -100, -200);
     scene.add(blob2);
     blobs.push(blob2);
+
+    createParticles();
+  }
+
+  function createParticles() {
+    const particleGeometry = new THREE.BufferGeometry();
+    const particleCount = 200;
+    const positions = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount * 3; i++) {
+      positions[i] = (Math.random() - 0.5) * 1500;
+    }
+
+    particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const particleMaterial = new THREE.PointsMaterial({
+      color: 0xFF6B00,
+      size: 3,
+      transparent: true,
+      opacity: 0.5,
+      sizeAttenuation: true
+    });
+
+    const particles = new THREE.Points(particleGeometry, particleMaterial);
+    scene.add(particles);
+    scene.userData.particles = particles;
   }
 
   function addLights() {
@@ -110,6 +135,13 @@ const ThreeScene = (() => {
         blob.geometry.computeVertexNormals();
       }
     });
+    
+    // Animate particles
+    const particles = scene.userData.particles;
+    if (particles) {
+      particles.rotation.y = elapsed * 0.05;
+      particles.rotation.x = elapsed * 0.02;
+    }
 
     // Camera follow mouse softly
     camera.position.x += (mouseX * 0.2 - camera.position.x) * 0.02;
