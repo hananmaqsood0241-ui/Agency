@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZEPTIVO Digital — We Grow Brands Digitally | Premium Digital Marketing Agency</title>
-  <meta name="description" content="ZEPTIVO Digital is a premium digital marketing agency specializing in email marketing, paid ads, social media management, and web design. We grow brands digitally.">
+  <meta name="description" content="Zeptivo Digital is a premium digital marketing agency specializing in Email Marketing, Paid Ads, and Web Design. Serving clients worldwide from Pakistan.">
   <meta name="keywords" content="digital marketing, email marketing, paid ads, web design, social media, ZEPTIVO">
   <meta property="og:title" content="ZEPTIVO Digital — We Grow Brands Digitally">
   <meta property="og:description" content="Premium digital marketing agency specializing in email marketing, paid ads, and web development.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://zeptivo.digital">
-  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A192F%22/><path d=%22M70 20H30L55 45H35L70 80V50H50L70 20Z%22 fill=%22%23FF6B00%22/></svg>">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,14 +25,17 @@
 </head>
 <body class="is-loading">
 
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
   <!-- Preloader -->
   <div id="preloader">
     <div class="preloader-content">
-      <div class="preloader-logo" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <div class="preloader-logo">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M28 8H12L22 18H14L28 32V20H20L28 8Z" fill="#FF6B00"/>
         </svg>
-        <span style="color: #0A192F; font-weight: 700; font-size: 24px; letter-spacing: 1px;">ZEPTIVO</span>
+        <span class="logo-text">ZEPTIVO</span>
       </div>
       <div class="preloader-bar"><div class="preloader-bar-inner"></div></div>
       <div class="preloader-counter" id="preloaderCounter">0%</div>
@@ -52,11 +55,11 @@
   <!-- Navigation -->
   <header id="navbar">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Home" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+      <a href="#hero" class="nav-logo" aria-label="Home">
         <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M28 8H12L22 18H14L28 32V20H20L28 8Z" fill="#FF6B00"/>
         </svg>
-        <span style="color: #0A192F; font-weight: 700; font-size: 20px; letter-spacing: 1px;">ZEPTIVO</span>
+        <span class="logo-text">ZEPTIVO</span>
       </a>
       <div class="nav-links">
         <a href="#hero" class="active">Home</a>
@@ -85,12 +88,15 @@
 
   <!-- ==================== HERO ==================== -->
   <section id="hero">
-    <div class="hero-spotlight" id="heroSpotlight"></div>
+    <div class="hero-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
     <div class="container hero-content">
-      <div class="hero-tag"><span class="pulse-dot"></span> Digital Marketing Agency</div>
+      <div class="hero-badge">✦ Premium Digital Agency</div>
       <h1 class="hero-title" id="heroTitle">
-        <span class="line split-text">We Grow</span>
-        <span class="line split-text"><span class="gradient-text">Brands Digitally</span></span>
+        <span class="line"><span class="word">We</span> <span class="word">Grow</span></span>
+        <span class="line"><span class="word gradient-text">Brands</span> <span class="word gradient-text">Digitally</span></span>
       </h1>
       <p class="hero-subtitle">
         Email Marketing <span>•</span> Paid Ads <span>•</span> Web Development
@@ -109,10 +115,16 @@
   <!-- ==================== MARQUEE ==================== -->
   <div class="marquee-section">
     <div class="marquee-content">
-      <span>EMAIL MARKETING • PAID ADS • WEB DESIGN • AUTOMATION • GROWTH •</span>
-      <span>EMAIL MARKETING • PAID ADS • WEB DESIGN • AUTOMATION • GROWTH •</span>
-      <span>EMAIL MARKETING • PAID ADS • WEB DESIGN • AUTOMATION • GROWTH •</span>
-      <span>EMAIL MARKETING • PAID ADS • WEB DESIGN • AUTOMATION • GROWTH •</span>
+      <div class="marquee-item">EMAIL MARKETING <span class="sep">✦</span></div>
+      <div class="marquee-item">PAID ADS <span class="sep">✦</span></div>
+      <div class="marquee-item">WEB DESIGN <span class="sep">✦</span></div>
+      <div class="marquee-item">AUTOMATION <span class="sep">✦</span></div>
+      <div class="marquee-item">GROWTH <span class="sep">✦</span></div>
+      <div class="marquee-item">EMAIL MARKETING <span class="sep">✦</span></div>
+      <div class="marquee-item">PAID ADS <span class="sep">✦</span></div>
+      <div class="marquee-item">WEB DESIGN <span class="sep">✦</span></div>
+      <div class="marquee-item">AUTOMATION <span class="sep">✦</span></div>
+      <div class="marquee-item">GROWTH <span class="sep">✦</span></div>
     </div>
   </div>
 
@@ -128,22 +140,24 @@
         <p class="section-subtitle">We craft data-driven strategies that transform your digital presence and deliver measurable results.</p>
       </div>
 
-      <div class="services-grid stagger-children">
-        <!-- Card 1 -->
-        <div class="service-card bento-tall reveal magnetic-btn" data-tilt>
+      <div class="services-grid">
+        <!-- Card 1: Hero Service -->
+        <div class="service-card bento-hero reveal magnetic-btn" data-tilt>
           <div class="service-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </div>
-          <h3>Email Marketing</h3>
-          <p>High-converting email campaigns that nurture leads and drive revenue with personalized messaging strategies.</p>
+          <div class="service-content">
+            <h3>Email Marketing</h3>
+            <p>High-converting email campaigns that nurture leads and drive revenue with personalized messaging strategies. We focus on deliverability and engagement to ensure your message reaches the right audience at the right time.</p>
+          </div>
         </div>
         <!-- Card 2 -->
-        <div class="service-card bento-wide reveal magnetic-btn" data-tilt>
+        <div class="service-card reveal magnetic-btn" data-tilt>
           <div class="service-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
           </div>
           <h3>Email Automation</h3>
-          <p>Smart automated workflows that deliver the right message at the right time, maximizing engagement and conversions.</p>
+          <p>Smart automated workflows that deliver the right message at the right time, maximizing engagement.</p>
         </div>
         <!-- Card 3 -->
         <div class="service-card reveal magnetic-btn" data-tilt>
@@ -162,12 +176,12 @@
           <p>Strategic search and display campaigns that capture high-intent traffic and convert it into customers.</p>
         </div>
         <!-- Card 5 -->
-        <div class="service-card bento-large reveal magnetic-btn" data-tilt>
+        <div class="service-card reveal magnetic-btn" data-tilt>
           <div class="service-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
           </div>
           <h3>Social Media</h3>
-          <p>Complete social media management with content creation, community building, and growth strategies.</p>
+          <p>Complete social media management with content creation and community building.</p>
         </div>
         <!-- Card 6 -->
         <div class="service-card bento-tall reveal magnetic-btn" data-tilt>
@@ -201,6 +215,39 @@
     </div>
   </section>
 
+  <!-- ==================== PROCESS ==================== -->
+  <section id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Workflow</div>
+        <h2 class="section-title">How We <span class="highlight">Deliver Results</span></h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal" data-step="1">
+          <div class="step-icon">🔍</div>
+          <h4>Discovery</h4>
+          <p>Deep dive into your brand and market goals.</p>
+        </div>
+        <div class="process-step reveal" data-step="2">
+          <div class="step-icon">📋</div>
+          <h4>Strategy</h4>
+          <p>Crafting a data-backed growth roadmap.</p>
+        </div>
+        <div class="process-step reveal" data-step="3">
+          <div class="step-icon">🚀</div>
+          <h4>Execute</h4>
+          <p>Precision implementation of campaigns.</p>
+        </div>
+        <div class="process-step reveal" data-step="4">
+          <div class="step-icon">📈</div>
+          <h4>Scale</h4>
+          <p>Optimizing and scaling what works.</p>
+        </div>
+        <div class="process-line"></div>
+      </div>
+    </div>
+  </section>
+
   <div class="section-divider"></div>
 
   <!-- ==================== PORTFOLIO ==================== -->
@@ -226,45 +273,45 @@
       <div class="portfolio-track-wrapper">
         <div class="portfolio-track" id="portfolioTrack">
           <div class="portfolio-card" data-category="email">
-            <img src="https://picsum.photos/800/600?random=1" alt="Email Marketing Campaign for TechStart" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800" alt="Email Marketing" loading="lazy">
             <div class="portfolio-overlay">
-              <h4>TechStart Email Campaign</h4>
+              <h4>Email Campaigns</h4>
               <span>Email Marketing</span>
             </div>
           </div>
           <div class="portfolio-card" data-category="ads">
-            <img src="https://picsum.photos/800/600?random=2" alt="Meta Ads Campaign for LuxeBrand" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800" alt="Paid Ads" loading="lazy">
             <div class="portfolio-overlay">
-              <h4>LuxeBrand Social Ads</h4>
-              <span>Meta Ads</span>
+              <h4>Social Ads</h4>
+              <span>Meta & Google Ads</span>
             </div>
           </div>
           <div class="portfolio-card" data-category="web">
-            <img src="https://picsum.photos/800/600?random=3" alt="Website Redesign for Horizon Corp" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800" alt="Web Design" loading="lazy">
             <div class="portfolio-overlay">
-              <h4>Horizon Corp Website</h4>
-              <span>Web Design & Dev</span>
+              <h4>Agency Website</h4>
+              <span>Web Design</span>
             </div>
           </div>
           <div class="portfolio-card" data-category="ads">
-            <img src="https://picsum.photos/800/600?random=4" alt="Google Ads for CloudSync" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f5a07d?w=800" alt="Google Ads" loading="lazy">
             <div class="portfolio-overlay">
-              <h4>CloudSync PPC Campaign</h4>
+              <h4>Search Campaigns</h4>
               <span>Google Ads</span>
             </div>
           </div>
-          <div class="portfolio-card" data-category="email">
-            <img src="https://picsum.photos/800/600?random=5" alt="Email Automation for EcoShop" loading="lazy">
+          <div class="portfolio-card" data-category="automation">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800" alt="Automation" loading="lazy">
             <div class="portfolio-overlay">
-              <h4>EcoShop Automation</h4>
-              <span>Email Automation</span>
+              <h4>Flow Automations</h4>
+              <span>Automation</span>
             </div>
           </div>
           <div class="portfolio-card" data-category="social">
-            <img src="https://picsum.photos/800/600?random=6" alt="Social Media Management for FitLife" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800" alt="Social Media" loading="lazy">
             <div class="portfolio-overlay">
-              <h4>FitLife Social Strategy</h4>
-              <span>Social Media Management</span>
+              <h4>Brand Socials</h4>
+              <span>Social Media</span>
             </div>
           </div>
         </div>
@@ -284,6 +331,7 @@
       </div>
 
       <div class="testimonial-slider reveal-scale">
+        <div class="testimonial-quote">"</div>
         <div class="testimonial-track" id="testimonialTrack">
           <div class="testimonial-card">
             <div class="testimonial-stars">★★★★★</div>
@@ -388,8 +436,11 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <label for="message">Your Message</label>
+              <span id="charCount" style="font-size: 0.7rem; color: var(--text-muted);">0 / 500</span>
+            </div>
+            <textarea id="message" name="message" placeholder="Tell us about your project..." maxlength="500" required></textarea>
           </div>
           <button type="submit" class="form-submit magnetic-btn" id="submitBtn">
             <span class="btn-text">Send Message →</span>
@@ -397,7 +448,7 @@
           </button>
           <div class="form-success" id="formSuccess">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-            <span>Message sent successfully! We'll get back to you soon.</span>
+            <span>✓ Message sent! We'll respond within 24 hours.</span>
           </div>
         </form>
       </div>
@@ -409,13 +460,13 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#hero" class="nav-logo" aria-label="Home" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+          <a href="#hero" class="nav-logo" aria-label="Home">
             <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M28 8H12L22 18H14L28 32V20H20L28 8Z" fill="#FF6B00"/>
             </svg>
-            <span style="color: #ffffff; font-weight: 700; font-size: 20px; letter-spacing: 1px;">ZEPTIVO</span>
+            <span class="logo-text" style="color: #FFFFFF;">ZEPTIVO</span>
           </a>
-          <p>Premium digital marketing agency helping brands grow through data-driven strategies and creative excellence.</p>
+          <p>Growing Brands Since 2022. Premium digital marketing agency helping brands grow through data-driven strategies.</p>
         </div>
         <div class="footer-col">
           <h5>Services</h5>
@@ -433,7 +484,7 @@
         </div>
         <div class="footer-col">
           <h5>Newsletter</h5>
-          <p>Subscribe for marketing tips</p>
+          <p>Get Marketing Tips</p>
           <form class="newsletter-form">
             <input type="email" placeholder="Email address" required>
             <button type="submit">Subscribe</button>
@@ -450,7 +501,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
           </a>
           <a href="#" aria-label="Twitter" class="social-icon twitter">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" fill="currentColor" stroke="none"></path></svg>
           </a>
           <a href="#" aria-label="Facebook" class="social-icon facebook">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>

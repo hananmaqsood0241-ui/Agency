@@ -5,10 +5,25 @@
 const Contact = (() => {
   const form = document.getElementById('contactForm');
   const whatsapp = document.getElementById('whatsappFab');
+  const messageField = document.getElementById('message');
+  const charCount = document.getElementById('charCount');
 
   function init() {
     if (form) setupForm();
     if (whatsapp) setupWhatsApp();
+    if (messageField && charCount) setupCharCounter();
+  }
+
+  function setupCharCounter() {
+    messageField.addEventListener('input', () => {
+      const length = messageField.value.length;
+      charCount.innerText = `${length} / 500`;
+      if (length >= 450) {
+        charCount.style.color = '#FF6B00';
+      } else {
+        charCount.style.color = 'rgba(26, 26, 46, 0.5)';
+      }
+    });
   }
 
   function setupForm() {
@@ -37,6 +52,7 @@ const Contact = (() => {
         btn.classList.remove('loading');
         successMsg.classList.add('show');
         form.reset();
+        if (charCount) charCount.innerText = '0 / 500';
 
         setTimeout(() => {
           successMsg.classList.remove('show');
